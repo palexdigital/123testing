@@ -13,7 +13,7 @@
   <style>
     /* --- RESET & BASE --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background: #000; color: #543199; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; background: #000; color: #8B5CF6; overflow-x: hidden; }
     a { text-decoration: none; color: inherit; }
     button { cursor: pointer; border: none; background: none; color: inherit; font-family: inherit; }
     input, textarea, select { font-family: inherit; }
@@ -32,19 +32,19 @@
 
     /* --- GLASSMORPHISM & EFFECTS --- */
     .glass {
-      background-color: rgba(84, 49, 153, 0.05);
+      background-color: rgba(139, 92, 246, 0.05);
       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(84, 49, 153, 0.1);
+      border: 1px solid rgba(139, 92, 246, 0.1);
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
     .glass-strong {
-      background-color: rgba(84, 49, 153, 0.1);
+      background-color: rgba(139, 92, 246, 0.1);
       backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(84, 49, 153, 0.2);
+      border: 1px solid rgba(139, 92, 246, 0.2);
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
     .text-shiny {
-      background: linear-gradient(120deg, rgba(84,49,153,0) 0%, rgba(255,255,255,0.8) 50%, rgba(84,49,153,0) 100%);
+      background: linear-gradient(120deg, rgba(139,92,246,0) 0%, rgba(255,255,255,0.8) 50%, rgba(139,92,246,0) 100%);
       background-size: 200% auto; background-clip: text; -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shiny 4s linear infinite;
@@ -63,14 +63,14 @@
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     .form-input {
-      width: 100%; background-color: rgba(84, 49, 153, 0.05);
-      border: 1px solid rgba(84, 49, 153, 0.1); border-radius: 0.5rem;
-      padding: 0.75rem 1rem; font-size: 0.875rem; color: #543199; transition: all 0.2s;
+      width: 100%; background-color: rgba(139, 92, 246, 0.05);
+      border: 1px solid rgba(139, 92, 246, 0.1); border-radius: 0.5rem;
+      padding: 0.75rem 1rem; font-size: 0.875rem; color: #8B5CF6; transition: all 0.2s;
     }
-    .form-input:focus { outline: none; border-color: rgba(84, 49, 153, 0.3); background-color: rgba(84, 49, 153, 0.08); }
-    .form-input::placeholder { color: rgba(84, 49, 153, 0.4); }
+    .form-input:focus { outline: none; border-color: rgba(139, 92, 246, 0.3); background-color: rgba(139, 92, 246, 0.08); }
+    .form-input::placeholder { color: rgba(139, 92, 246, 0.4); }
     .select-arrow {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23543199' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%238B5CF6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.2rem;
     }
     .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
@@ -96,48 +96,48 @@
     .uppercase { text-transform: uppercase; } .tracking-tight { letter-spacing: -0.025em; } .tracking-wide { letter-spacing: 0.025em; } .tracking-wider { letter-spacing: 0.05em; } .tracking-widest { letter-spacing: 0.1em; }
     .leading-\[1\.1\] { line-height: 1.1; } .leading-tight { line-height: 1.25; } .leading-relaxed { line-height: 1.625; } .text-center { text-align: center; } .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .whitespace-nowrap { white-space: nowrap; } .break-all { word-break: break-all; } .resize-none { resize: none; } .appearance-none { appearance: none; }
     
-    /* --- COLOR OVERRIDES (White to #543199) --- */
-    .text-white { color: #543199 !important; }
-    .text-white\/40 { color: rgba(84, 49, 153, 0.4) !important; }
-    .text-white\/50 { color: rgba(84, 49, 153, 0.5) !important; }
-    .text-white\/60 { color: rgba(84, 49, 153, 0.6) !important; }
-    .text-white\/70 { color: rgba(84, 49, 153, 0.7) !important; }
-    .text-white\/80 { color: rgba(84, 49, 153, 0.8) !important; }
-    .text-white\/\[0\.02\] { color: rgba(84, 49, 153, 0.02) !important; }
+    /* --- COLOR OVERRIDES (White to #8B5CF6) --- */
+    .text-white { color: #8B5CF6 !important; }
+    .text-white\/40 { color: rgba(139, 92, 246, 0.4) !important; }
+    .text-white\/50 { color: rgba(139, 92, 246, 0.5) !important; }
+    .text-white\/60 { color: rgba(139, 92, 246, 0.6) !important; }
+    .text-white\/70 { color: rgba(139, 92, 246, 0.7) !important; }
+    .text-white\/80 { color: rgba(139, 92, 246, 0.8) !important; }
+    .text-white\/\[0\.02\] { color: rgba(139, 92, 246, 0.02) !important; }
     .text-blue-400 { color: #60a5fa; }
     
     .bg-black { background-color: #000; } .bg-white { background-color: #fff; }
-    .bg-white\/5 { background-color: rgba(84, 49, 153, 0.05) !important; }
-    .bg-white\/10 { background-color: rgba(84, 49, 153, 0.1) !important; }
-    .bg-white\/20 { background-color: rgba(84, 49, 153, 0.2) !important; }
+    .bg-white\/5 { background-color: rgba(139, 92, 246, 0.05) !important; }
+    .bg-white\/10 { background-color: rgba(139, 92, 246, 0.1) !important; }
+    .bg-white\/20 { background-color: rgba(139, 92, 246, 0.2) !important; }
     .bg-black\/5 { background-color: rgba(0,0,0,0.05); } .bg-black\/10 { background-color: rgba(0,0,0,0.1); } .bg-black\/20 { background-color: rgba(0,0,0,0.2); } .bg-black\/60 { background-color: rgba(0,0,0,0.6); }
     .bg-blue-500\/5 { background-color: rgba(59,130,246,0.05); } .bg-blue-500\/20 { background-color: rgba(59,130,246,0.2); }
     .bg-green-500 { background-color: #22c55e; } .bg-purple-500 { background-color: #a855f7; } .bg-yellow-500 { background-color: #eab308; } .bg-gray-900 { background-color: #111827; }
     
-    .border-white\/5 { border-color: rgba(84, 49, 153, 0.05) !important; }
-    .border-white\/10 { border-color: rgba(84, 49, 153, 0.1) !important; }
-    .border-white\/20 { border-color: rgba(84, 49, 153, 0.2) !important; }
-    .border-white\/30 { border-color: rgba(84, 49, 153, 0.3) !important; }
+    .border-white\/5 { border-color: rgba(139, 92, 246, 0.05) !important; }
+    .border-white\/10 { border-color: rgba(139, 92, 246, 0.1) !important; }
+    .border-white\/20 { border-color: rgba(139, 92, 246, 0.2) !important; }
+    .border-white\/30 { border-color: rgba(139, 92, 246, 0.3) !important; }
     .border-blue-500\/20 { border-color: rgba(59,130,246,0.2); }
-    .border-l-white { border-left-color: #543199 !important; }
+    .border-l-white { border-left-color: #8B5CF6 !important; }
     .border-l-transparent { border-left-color: transparent; }
-    .divide-white\/5 > * + * { border-color: rgba(84, 49, 153, 0.05) !important; }
+    .divide-white\/5 > * + * { border-color: rgba(139, 92, 246, 0.05) !important; }
     
     .border { border-width: 1px; border-style: solid; } .border-b { border-bottom-width: 1px; border-bottom-style: solid; } .border-b-0 { border-bottom-width: 0; } .border-l-2 { border-left-width: 2px; border-left-style: solid; }
     .rounded-full { border-radius: 9999px; } .rounded-lg { border-radius: 0.5rem; } .rounded-xl { border-radius: 0.75rem; } .rounded-2xl { border-radius: 1rem; }
     .overflow-hidden { overflow: hidden; } .overflow-y-auto { overflow-y: auto; } .overflow-x-auto { overflow-x: auto; } .pointer-events-none { pointer-events: none; } .select-none { user-select: none; } .blur-3xl { filter: blur(64px); }
     .transition { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; } .transition-colors { transition-property: color, background-color, border-color; transition-duration: 150ms; } .transition-transform { transition-property: transform; transition-duration: 150ms; } .transition-opacity { transition-property: opacity; transition-duration: 150ms; } .duration-500 { transition-duration: 500ms; } .duration-700 { transition-duration: 700ms; }
-    .hover\:bg-white\/5:hover { background-color: rgba(84, 49, 153, 0.05) !important; }
-    .hover\:bg-white\/10:hover { background-color: rgba(84, 49, 153, 0.1) !important; }
-    .hover\:bg-white\/20:hover { background-color: rgba(84, 49, 153, 0.2) !important; }
-    .hover\:text-white:hover { color: #543199 !important; }
+    .hover\:bg-white\/5:hover { background-color: rgba(139, 92, 246, 0.05) !important; }
+    .hover\:bg-white\/10:hover { background-color: rgba(139, 92, 246, 0.1) !important; }
+    .hover\:bg-white\/20:hover { background-color: rgba(139, 92, 246, 0.2) !important; }
+    .hover\:text-white:hover { color: #8B5CF6 !important; }
     .hover\:scale-105:hover { transform: scale(1.05); } .hover\:scale-\[1\.02\]:hover { transform: scale(1.02); }
     .active\:scale-95:active { transform: scale(0.95); } .active\:scale-\[0\.95\]:active { transform: scale(0.95); }
-    .group:hover .group-hover\:opacity-100 { opacity: 1; } .group:hover .group-hover\:bg-white\/10 { background-color: rgba(84, 49, 153, 0.1) !important; }
+    .group:hover .group-hover\:opacity-100 { opacity: 1; } .group:hover .group-hover\:bg-white\/10 { background-color: rgba(139, 92, 246, 0.1) !important; }
     .relative { position: relative; } .absolute { position: absolute; } .fixed { position: fixed; } .inset-0 { top:0;right:0;bottom:0;left:0; } .top-0 { top: 0; } .left-0 { left: 0; } .right-0 { right: 0; } .top-1\/2 { top: 50%; } .left-3 { left: 0.75rem; } .left-6 { left: 1.5rem; } .right-6 { right: 1.5rem; } .top-20 { top: 5rem; } .top-1\/4 { top: 25%; } .bottom-0 { bottom: 0; } .left-1\/4 { left: 25%; } .right-1\/4 { right: 25%; } .left-1\/2 { left: 50%; } .-translate-x-1\/2 { transform: translateX(-50%); } .-translate-y-1\/2 { transform: translateY(-50%); }
     .z-0 { z-index: 0; } .z-10 { z-index: 10; } .z-40 { z-index: 40; } .z-50 { z-index: 50; }
     .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); } .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .col-span-2 { grid-column: span 2 / span 2; } .col-span-3 { grid-column: span 3 / span 3; }
-    .prose { max-width: 65ch; color: rgba(84, 49, 153, 0.7); line-height: 1.625; } .prose p { margin-top: 1.25em; margin-bottom: 1.25em; } .prose p:first-child { margin-top: 0; } .prose p:last-child { margin-bottom: 0; }
+    .prose { max-width: 65ch; color: rgba(139, 92, 246, 0.7); line-height: 1.625; } .prose p { margin-top: 1.25em; margin-bottom: 1.25em; } .prose p:first-child { margin-top: 0; } .prose p:last-child { margin-bottom: 0; }
 
     /* --- RESPONSIVE --- */
     @media (min-width: 640px) { .sm\:inline { display: inline; } .sm\:flex-row { flex-direction: row; } .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -307,17 +307,6 @@
             </div>
             <div id="reader-desc" class="prose">
               <!-- Populated by JS -->
-            </div>
-            <div class="mt-8 flex items-center gap-3">
-              <div class="glass px-4 py-3 rounded-lg flex items-center gap-3 hover:bg-white/10 transition-colors cursor-pointer">
-                <div class="w-10 h-10 rounded bg-white/10 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-white/60"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
-                </div>
-                <div>
-                  <div class="text-sm font-medium">Service Brochure.pdf</div>
-                  <div class="text-xs text-white/50">1.2 MB</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
