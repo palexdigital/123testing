@@ -1,44 +1,415 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading...</title>
+    <title>paléX Digital Solutions | Elite Corporate Digital Agency</title>
+    <meta name="description" content="Engineered custom digital solutions for enterprise scale. Delivering world-class web applications, premium systems, and elite brand identity systems.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlack: '#000000',
+                        brandPurple: {
+                            base: '#6A0DAD',
+                            deep: '#3A0066',
+                            glow: '#7B2CBF'
+                        },
+                        brandSurface: '#0A0A0C',
+                        brandBorder: '#1F1F23',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    letterSpacing: {
+                        superWide: '0.25em',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100vh;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
         }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        ::selection {
+            background-color: #6A0DAD;
+            color: #ffffff;
+        }
+        .bg-radial-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(106, 13, 173, 0.07) 0%, rgba(0, 0, 0, 0) 75%);
         }
     </style>
 </head>
-<body>
-    <iframe id="contentFrame" src="https://app.emergent.sh/loading-preview?host=palex-elite.preview.emergentagent.com" allowfullscreen></iframe>
+<body class="relative">
+
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <canvas id="letterGlitchCanvas" class="w-full h-full opacity-60 mix-blend-screen"></canvas>
+        <div class="absolute inset-0 bg-radial-gradient"></div>
+    </div>
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-6 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+            <a href="#hero" class="font-mono text-lg font-bold tracking-superWide text-white group">
+                palé<span class="text-brandPurple-glow transition-colors duration-300 group-hover:text-white">X</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest text-gray-400 font-mono">
+                <a href="#overview" class="hover:text-white transition-colors">Overview</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#process" class="hover:text-white transition-colors">Protocol</a>
+                <a href="#contact" class="hover:text-white transition-colors text-brandPurple-glow">Initiate Engagement ↗</a>
+            </div>
+            <a href="https://wa.me/27627654746" target="_blank" rel="noopener noreferrer" class="md:hidden font-mono text-xs text-brandPurple-glow uppercase tracking-wider">CONNECT</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+
+        <section id="hero" class="min-h-screen flex items-center justify-center pt-24 px-6 md:px-12 relative overflow-hidden">
+            <div class="max-w-6xl w-full text-center space-y-8">
+                <div class="inline-flex items-center space-x-2 bg-brandPurple-deep/30 border border-brandPurple-base/40 px-4 py-1.5 rounded-full backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-brandPurple-glow animate-pulse"></span>
+                    <span class="text-xs uppercase tracking-superWide font-mono text-gray-300">Enterprise Digital Architecture</span>
+                </div>
+                <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight leading-none text-white max-w-5xl mx-auto">
+                    We Build Digital Assets That <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-brandPurple-glow">Command Authority.</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    paléX designs, develops, and deploys high-performance systems and bespoke corporate interfaces for organizations requiring absolute digital excellence.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 max-w-md mx-auto sm:max-w-none">
+                    <a href="https://wa.me/27627654746" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-4 bg-white text-black font-medium tracking-wide text-sm rounded-none hover:bg-transparent hover:text-white border border-white transition-all duration-300 text-center">
+                        Contact on WhatsApp
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-transparent text-white border border-brandBorder font-medium tracking-wide text-sm rounded-none hover:border-brandPurple-base transition-all duration-300 text-center backdrop-blur-sm">
+                        Get a Website
+                    </a>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
+        </section>
+
+        <section id="overview" class="py-24 px-6 md:px-12 bg-black/60 relative border-t border-brandBorder/60">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4">
+                    <span class="text-xs uppercase tracking-superWide font-mono text-brandPurple-glow block">01 / Identity</span>
+                    <h3 class="text-2xl font-bold tracking-tight text-white mt-2">Who we are, what we do, & why we exist</h3>
+                </div>
+                <div class="md:col-span-8 space-y-6 text-gray-400 font-light text-base md:text-lg leading-relaxed">
+                    <p>
+                        We operate at the convergence of cutting-edge technology and luxury aesthetic value. paléX Digital Solutions is not a casual design vendor; we are a dedicated engineering and digital transformation partner for modern enterprises.
+                    </p>
+                    <p>
+                        We build modern, custom, high-performance digital solutions that help businesses look credible, attract customers, scale online presence, and operate with professional digital systems. Every layout, system invocation, and server framework is carefully optimized to deliver confident, high-authority commercial results.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-32 px-6 md:px-12 border-t border-brandBorder/60 bg-black/40">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-16">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">02 / Engineering Suite</span>
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2 text-white">Website Development Services</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-brandSurface/80 border border-brandBorder p-8 rounded-none relative group transition-all duration-300 backdrop-blur-md">
+                        <h3 class="text-xl font-semibold text-white tracking-tight mb-6">Core Business Hubs</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Basic business websites (1–5 pages)</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Professional websites (5–10 pages)</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Premium custom websites</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Portfolio websites</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Website redesign services</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Maintenance & updates</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-brandSurface/80 border border-brandBorder p-8 rounded-none relative group transition-all duration-300 backdrop-blur-md">
+                        <h3 class="text-xl font-semibold text-white tracking-tight mb-6">Niche & Operational Systems</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>E-commerce websites & Storefronts</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Booking systems & Reservations</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Membership platforms</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Directory websites & Indexes</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Real estate systems</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>School, Church, & NGO layouts</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-brandSurface/80 border border-brandBorder p-8 rounded-none relative group transition-all duration-300 backdrop-blur-md">
+                        <h3 class="text-xl font-semibold text-white tracking-tight mb-6">Advanced Interactions</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Custom web applications</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>2D/3D interactive websites</span></li>
+                            <li class="flex items-start text-sm text-gray-400 font-light"><span class="text-brandPurple-glow mr-3 font-mono">▸</span><span>Bespoke custom UI logic</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 bg-brandSurface/40 border-t border-brandBorder/60">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-16 max-w-xl">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">03 / Core Systems</span>
+                    <h2 class="text-3xl font-bold tracking-tight mt-2 text-white">Features Included Standard</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">Mobile responsive design</h3><p class="text-xs text-gray-400 mt-2 font-light">Flawless presentation on every screen variable.</p></div>
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">Fast performance optimization</h3><p class="text-xs text-gray-400 mt-2 font-light">Low asset weight engineered for immediate execution.</p></div>
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">SEO setup & structure</h3><p class="text-xs text-gray-400 mt-2 font-light">Optimized markup logic mapping out key visibility targets.</p></div>
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">SSL cryptographic security</h3><p class="text-xs text-gray-400 mt-2 font-light">Hardened transport encryption deployed across networks.</p></div>
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">WhatsApp integration</h3><p class="text-xs text-gray-400 mt-2 font-light">Direct real-time conversions routed directly to your operations.</p></div>
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">Contact forms</h3><p class="text-xs text-gray-400 mt-2 font-light">Protected validation logic captures clean customer pipeline data.</p></div>
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">Cross-device compatibility</h3><p class="text-xs text-gray-400 mt-2 font-light">Reliable ecosystem operation across multiple platforms.</p></div>
+                    <div class="border-b border-brandBorder pb-6"><h3 class="text-white font-medium text-sm">Optional 3D components</h3><p class="text-xs text-gray-400 mt-2 font-light">Highly cinematic interactive frameworks tailored to your criteria.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 border-t border-brandBorder/60 bg-black/20">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-4">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">04 / DevOps Edge</span>
+                    <h2 class="text-2xl font-bold tracking-tight text-white mt-2">Hosting & Domain Frameworks</h2>
+                </div>
+                <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-400 font-light">
+                    <div class="p-6 bg-brandSurface border border-brandBorder space-y-2">
+                        <h3 class="text-white font-medium">Edge CDN Pipelines</h3>
+                        <p class="text-xs">Seamless architecture deployment with GitHub Pages, Cloudflare Pages, and high-uptime free server alternatives.</p>
+                    </div>
+                    <div class="p-6 bg-brandSurface border border-brandBorder space-y-2">
+                        <h3 class="text-white font-medium">Domain & DNS Orchestration</h3>
+                        <p class="text-xs">Complete zone setup (.com, etc.), secure SSL configurations, and cohesive professional brand alignments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 bg-brandSurface/40 border-t border-brandBorder/60">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-12">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">05 / Visual Creative</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white mt-2">Graphic Design Suite</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-black/40 border border-brandBorder p-6 flex items-center space-x-4"><div class="w-1.5 h-1.5 bg-brandPurple-base"></div><span class="text-sm text-gray-300 font-light">Logo design (standard + premium corporate sets)</span></div>
+                    <div class="bg-black/40 border border-brandBorder p-6 flex items-center space-x-4"><div class="w-1.5 h-1.5 bg-brandPurple-base"></div><span class="text-sm text-gray-300 font-light">Executive Corporate Business cards</span></div>
+                    <div class="bg-black/40 border border-brandBorder p-6 flex items-center space-x-4"><div class="w-1.5 h-1.5 bg-brandPurple-base"></div><span class="text-sm text-gray-300 font-light">High-authority Flyers & Posters</span></div>
+                    <div class="bg-black/40 border border-brandBorder p-6 flex items-center space-x-4"><div class="w-1.5 h-1.5 bg-brandPurple-base"></div><span class="text-sm text-gray-300 font-light">System Profiles & Structural Brochures</span></div>
+                    <div class="bg-black/40 border border-brandBorder p-6 flex items-center space-x-4"><div class="w-1.5 h-1.5 bg-brandPurple-base"></div><span class="text-sm text-gray-300 font-light">Menus & Tactile Print Collateral Architecture</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 border-t border-brandBorder/60">
+            <div class="max-w-5xl mx-auto">
+                <div class="max-w-xl mb-12">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">06 / Scaling Assets</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white mt-2">Branding & Strategic Marketing</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 font-light text-sm text-gray-400">
+                    <div class="space-y-4">
+                        <h3 class="text-white font-medium text-base">Media Visual Systems</h3>
+                        <p class="leading-relaxed text-xs">Custom professional channel layout creatives and brand identity designs mapped out to guarantee immediate prestige positioning.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-white font-medium text-base">Campaign Creative Architecture</h3>
+                        <p class="leading-relaxed text-xs">High-performance promotional banners and coordinated media elements built explicitly for conversion pipeline targets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 bg-brandSurface/40 border-t border-brandBorder/60">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-4">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">07 / System Engines</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white mt-2">Bespoke Digital Systems</h2>
+                </div>
+                <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-black/60 border border-brandBorder p-6 space-y-2"><h4 class="text-white font-semibold text-sm">Mobile app development</h4><p class="text-xs text-gray-400 font-light leading-relaxed">High-efficiency native app frameworks configured for performance workflows.</p></div>
+                    <div class="bg-black/60 border border-brandBorder p-6 space-y-2"><h4 class="text-white font-semibold text-sm">QR landing pages</h4><p class="text-xs text-gray-400 font-light leading-relaxed">Instant-access routing portals seamlessly linking static assets with dynamic records.</p></div>
+                    <div class="bg-black/60 border border-brandBorder p-6 space-y-2"><h4 class="text-white font-semibold text-sm">Digital business matrices</h4><p class="text-xs text-gray-400 font-light leading-relaxed">Sleek multi-identity link-in-bio portals and corporate micro-cards.</p></div>
+                    <div class="bg-black/60 border border-brandBorder p-6 space-y-2"><h4 class="text-white font-semibold text-sm">Automation toolkits</h4><p class="text-xs text-gray-400 font-light leading-relaxed">Bespoke background integrations matching internal workflow goals perfectly.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 border-t border-brandBorder/60 bg-black/40">
+            <div class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-6">
+                <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">08 / Store Management</span>
+                <h2 class="text-3xl font-bold tracking-tight text-white">App Store Publishing Lifecycles</h2>
+                <p class="text-gray-400 text-sm font-light max-w-2xl leading-relaxed">
+                    Complete publishing governance for the Apple App Store and Google Play Store ecosystems. We oversee sandboxed policy criteria, deployment setups, upgrades, and structural support modules.
+                </p>
+            </div>
+        </section>
+
+        <section id="process" class="py-32 px-6 md:px-12 bg-brandSurface/40 border-t border-brandBorder/60">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-20 text-center">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">09 / Methodology</span>
+                    <h2 class="text-3xl font-bold tracking-tight text-white mt-2">The Execution Protocol</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+                    <div class="space-y-4"><div class="text-4xl font-mono font-bold text-brandPurple-deep/30">01</div><h3 class="text-base font-semibold text-white">Discovery</h3><p class="text-xs text-gray-400 font-light">Deep parameter alignment defining scope requirements.</p></div>
+                    <div class="space-y-4"><div class="text-4xl font-mono font-bold text-brandPurple-deep/30">02</div><h3 class="text-base font-semibold text-white">Design</h3><p class="text-xs text-gray-400 font-light">Crafting minimalist, premium layouts for authority positioning.</p></div>
+                    <div class="space-y-4"><div class="text-4xl font-mono font-bold text-brandPurple-deep/30">03</div><h3 class="text-base font-semibold text-white">Development</h3><p class="text-xs text-gray-400 font-light">Clean native programming using minimal external overhead.</p></div>
+                    <div class="space-y-4"><div class="text-4xl font-mono font-bold text-brandPurple-deep/30">04</div><h3 class="text-base font-semibold text-white">Deployment</h3><p class="text-xs text-gray-400 font-light">Rigorous asset validation prior to edge launch initialization.</p></div>
+                    <div class="space-y-4"><div class="text-4xl font-mono font-bold text-brandPurple-deep/30">05</div><h3 class="text-base font-semibold text-white">Support</h3><p class="text-xs text-gray-400 font-light">Continuous uptime verification and long-term scaling modules.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 px-6 md:px-12 border-t border-brandBorder/60 bg-black/60">
+            <div class="max-w-4xl mx-auto text-center space-y-6">
+                <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">10 / Core Philosophy</span>
+                <h2 class="text-2xl font-light text-white tracking-wide">
+                    "We reject generic structural design patterns. Every platform deployment serves as an intentional, ultra-optimized statement of corporate capability."
+                </h2>
+                <p class="text-xs font-mono tracking-widest text-gray-500 uppercase">— paléX Engineering Core Directive</p>
+            </div>
+        </section>
+
+        <section id="contact" class="py-32 px-6 md:px-12 bg-black border-t border-brandBorder relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-brandPurple-base/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+                <div class="space-y-4">
+                    <span class="text-xs font-mono uppercase tracking-superWide text-brandPurple-glow">11 / Strategic Intake</span>
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white">Initiate Client Intake</h2>
+                    <p class="text-gray-400 text-sm max-w-xl mx-auto font-light leading-relaxed">
+                        We accept projects based strictly on mutual alignment. Reach out via our channels to establish system parameters.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center justify-center gap-6 max-w-md mx-auto">
+                    <a href="https://wa.me/27627654746" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center px-8 py-4 bg-brandPurple-base text-white hover:bg-brandPurple-glow font-medium text-sm tracking-wide transition-all duration-300">
+                        <span>Contact on WhatsApp</span>
+                    </a>
+                    <div class="text-xs font-mono text-gray-500 tracking-wider uppercase">OR CONTACT VIA SECURE ENVELOPE</div>
+                    <a href="mailto:palexdigital@gmail.com" class="text-white hover:text-brandPurple-glow text-base font-mono tracking-wide transition-colors duration-300">
+                        palexdigital@gmail.com
+                    </a>
+                </div>
+                <div class="pt-12 border-t border-brandBorder/60 grid grid-cols-2 md:grid-cols-3 gap-6 text-left max-w-2xl mx-auto text-xs font-mono">
+                    <div>
+                        <h4 class="text-gray-500 uppercase">Direct Secure Comms</h4>
+                        <p class="text-gray-300 mt-1">+27 62 765 4746</p>
+                    </div>
+                    <div>
+                        <h4 class="text-gray-500 uppercase">Intake Metric</h4>
+                        <p class="text-gray-300 mt-1">Selective Client Selection</p>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <h4 class="text-gray-500 uppercase">Brand Profile</h4>
+                        <p class="text-gray-300 mt-1">Elite Architecture Partner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative z-10 border-t border-brandBorder bg-black py-8 text-center text-xs tracking-widest text-gray-600 font-mono">
+        &copy; 2026 PALÉX DIGITAL SOLUTIONS. ALL RIGHTS RESERVED.
+    </footer>
+
     <script>
-        // Listen for messages from the iframe
-        window.addEventListener('message', function(event) {
-
-        	console.log(event.origin);
-       
-
-            if (event.data && event.data.type === 'reload') {
-                const iframe = document.getElementById('contentFrame');
-                window.location.reload();
-            }
-
-            if (event.data && event.data.type === 'url') {
-                const iframe = document.getElementById('contentFrame');
-                window.open(event.data.url, '_blank');
+        // Floating Nav Scrolling Controller
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navbar.classList.add('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-brandBorder', 'py-4');
+            } else {
+                navbar.classList.remove('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-brandBorder', 'py-4');
+                navbar.classList.add('bg-transparent', 'py-6');
             }
         });
+
+        // LetterGlitch Canvas Optimization Engine
+        const canvas = document.getElementById('letterGlitchCanvas');
+        const ctx = canvas.getContext('2d', { alpha: false });
+
+        let animationFrameId;
+        let lastTime = 0;
+        const glitchSpeed = 65; // Balanced optimization frame pacing
+        const glitchColors = ['#13221C', '#4A0680', '#1F3C4D'];
+        const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZΩΨΦ01';
+        let grid = [];
+        let columns = 0;
+        let rows = 0;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            columns = Math.floor(canvas.width / 24);
+            rows = Math.floor(canvas.height / 24);
+            grid = [];
+            for (let i = 0; i < columns * rows; i++) {
+                grid.push({
+                    char: chars[Math.floor(Math.random() * chars.length)],
+                    color: glitchColors[Math.floor(Math.random() * glitchColors.length)],
+                    opacity: Math.random() * 0.12
+                });
+            }
+        }
+
+        function runGlitchFrame(timestamp) {
+            if (timestamp - lastTime > glitchSpeed) {
+                lastTime = timestamp;
+
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.font = '11px monospace';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < columns; c++) {
+                        const index = r * columns + c;
+                        if (!grid[index]) continue;
+
+                        if (Math.random() > 0.97) {
+                          grid[index].char = chars[Math.floor(Math.random() * chars.length)];
+                          grid[index].opacity = Math.random() * 0.22;
+                        }
+
+                        ctx.globalAlpha = grid[index].opacity;
+                        ctx.fillStyle = grid[index].color;
+                        ctx.fillText(grid[index].char, c * 24 + 12, r * 24 + 12);
+                    }
+                }
+
+                ctx.globalAlpha = 1.0;
+
+                // Center-weighted protection Vignette for text readability
+                const gradient = ctx.createRadialGradient(
+                    canvas.width / 2, canvas.height / 2, 100,
+                    canvas.width / 2, canvas.height / 2, Math.max(canvas.width, canvas.height) * 0.8
+                );
+                gradient.addColorStop(0, 'rgba(0, 0, 0, 0.05)');
+                gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0.55)');
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0.95)');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+            animationFrameId = requestAnimationFrame(runGlitchFrame);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        animationFrameId = requestAnimationFrame(runGlitchFrame);
     </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0cbc81dbe45f17a',t:'MTc4MTYzMzUzNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
